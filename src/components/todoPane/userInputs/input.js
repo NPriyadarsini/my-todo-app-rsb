@@ -8,7 +8,7 @@ const actionKeys = {
 	Escape: (context) => context.actions.setInput(''),
 };
 const Input = (context) => {
-	const { state } = context;
+	const { state, actions } = context;
 
 	return (
 		<label>Enter the Task:{}
@@ -18,7 +18,7 @@ const Input = (context) => {
 				type="text"
 				value={ state.input }
 				onChange={ (evt) =>
-					context.actions.setInput(evt.target.value) }
+					actions.setInput(evt.target.value) }
 				onKeyUp={ (evt) => {
 					actionKeys[evt.code] && actionKeys[evt.code](context);
 				} }
