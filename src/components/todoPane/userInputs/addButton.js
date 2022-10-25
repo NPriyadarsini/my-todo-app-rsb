@@ -1,11 +1,16 @@
 import { React } from 'react';
 
-const AddButton = (context) =>
-	<button
-		role="addButton"
-		onClick={ () => context.actions.addTodo() }
-	>
-		Add
-	</button>;
+const AddButton = (context) => {
+	const { actions } = context;
+
+	return (
+		<button
+			role="addButton"
+			onClick={ () => actions.addTodo() }
+		>
+			Add
+		</button>
+	);
+};
 
 export default AddButton;

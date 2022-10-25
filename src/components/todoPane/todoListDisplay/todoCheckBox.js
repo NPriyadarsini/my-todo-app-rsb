@@ -1,7 +1,7 @@
 import { React } from 'react';
 
 const CheckBox = (context) => {
-	const { data } = context;
+	const { data, actions } = context;
 	const { completed } = data;
 
 	return (
@@ -9,7 +9,7 @@ const CheckBox = (context) => {
 			role="toggleTodo"
 			type="checkbox"
 			checked={ completed }
-			onChange={ () => context.actions.toggleTodo(data) }
+			onChange={ () => actions.toggleTodo(data) }
 		/>);
 };
 

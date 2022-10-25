@@ -2,7 +2,7 @@ import { React } from 'react';
 import TodoManager from '../../../services/todoManager';
 
 const FilterButton = (context) => {
-	const { data } = context;
+	const { data, actions } = context;
 	const { label, name } = data;
 
 	return (
@@ -10,7 +10,7 @@ const FilterButton = (context) => {
 			key={ name }
 			role="filterButton"
 			disabled={ TodoManager.hasNoTodos(context) }
-			onClick={ () => context.actions.setFilter(name) }
+			onClick={ () => actions.setFilter(name) }
 		>
 			{label}
 		</button>
